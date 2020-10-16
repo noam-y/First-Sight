@@ -1,0 +1,148 @@
+
+body{
+    display: block;
+    box-sizing: border-box;
+    font-family: 'Piazzolla', serif;
+    justify-content: center;
+}
+
+.header{
+    display:flex;
+    align-items: flex-end;
+    flex-direction: row-reverse;
+    background-color: #ECB7B7;
+    position: fixed;
+    top:0px; left:0px; right: 0px;
+    padding: 10px 0px 10px 0px;
+    margin-bottom: 100px;
+
+}
+
+.header a{
+    margin: 3px 20px 3px 20px
+}
+
+a:hover{
+    color: #CD6060;
+}
+
+.content{
+    background-color: #F9F4F2;
+    max-width: 600px;
+    padding: 0px 50px 10px 40px;
+}
+
+.sidebar{
+    padding:50px;
+    background-color: #F1DDDD;
+    display: flex;
+    flex-flow:column wrap;
+}
+
+.property{
+    margin: 10px 00x
+}
+
+.scrollable{
+    display: block;
+
+}
+
+.property{
+    margin: 20px;
+}
+
+input[type="text"]{
+    border-radius: 10px;
+    border-width: 0px;
+    margin-left:1em
+}
+
+h1{
+    font-size: 4em;
+    color: #A92929;
+}
+
+h3{
+    color:#E95656;
+    font-size: 2em;
+}
+
+button{
+    border-radius: 10px;
+    max-width:190px;
+    padding:0px 30px 0px 30px;
+    height:40px;
+    border-width: 0px;
+    background-color: #AB4545;
+    color: #000010;
+    font-weight: bold;
+    margin: 20px;
+    align-self: flex-end;
+}
+
+button:hover{
+    background-color:#A92929 ;
+}
+
+.ellipse{
+    position: absolute;
+    width: 867px;
+    height: 878px;
+    float:left;
+    background: #A05252;
+    mix-blend-mode: screen;
+
+}
+
+@media screen and (min-width: 600px){
+    body{
+        display: flex;
+        flex-flow: row wrap;
+        box-sizing: border-box;
+        font-family: 'Piazzolla', serif;
+        justify-content: center;
+        margin:0px;
+    }
+    
+    .header{
+        display:flex;
+        align-items: flex-end;
+        flex-direction: row-reverse;
+        background-color: #ECB7B7;
+        position: fixed;
+        top:0px; left:0px; right: 0px;
+        padding: 10px 0px 10px 0px;
+        margin-bottom: 100px;
+    
+    }
+
+
+    .content{
+        flex:4 400px;
+        background-color: #F9F4F2;
+        max-width: 600px;
+        padding: 0px 50px 200px 40px;
+        
+    }
+    
+    .sidebar{
+        padding:50px;
+        background-color: #F1DDDD;
+        flex: 3 300px;
+        max-width:400px;
+        display: flex;
+        flex-flow:column wrap;
+    }
+    
+    .property{
+        margin: 10px 00x
+    }
+    
+    .scrollable{
+        display: flex;
+        justify-content: center;
+    
+    }
+    
+}
