@@ -28,14 +28,13 @@ a:hover{
 
 .content{
     background-color: #F9F4F2;
-    max-width: 600px;
     padding: 0px 50px 10px 40px;
 }
 
 .sidebar{
     padding:50px;
     background-color: #F1DDDD;
-    display: flex;
+    display: block;
     flex-flow:column wrap;
 }
 
@@ -61,7 +60,7 @@ input[type="text"]{
 }
 
 h1{
-    font-size: 4em;
+    font-size: 2em;
     color: #A92929;
 }
 
@@ -143,10 +142,11 @@ select[name="genres"]{
     .content{
         flex:4 400px;
         background-color: #F9F4F2;
-        max-width: 600px;
+        max-width: 40em;
         padding: 0px 50px 0px 40px;
 
     }
+
     
     .sidebar{
         padding:50px;
@@ -159,12 +159,17 @@ select[name="genres"]{
 
     
     .property{
-        margin: 10px 00x
+        margin: 10px 00x;
+        display:inline-block;
     }
     
     .scrollable{
         display: flex;
         justify-content: center;
+    }
+
+    h1{
+        font-size: 4em;
     }
     
 }
