@@ -13,6 +13,8 @@ body{
     background-color: #ECB7B7;
     position: fixed;
     top:0px; left:0px; right: 0px;
+    padding: 10px 0px 10px 0px;
+    margin-bottom: 100px;
 
 }
 
@@ -26,11 +28,11 @@ a:hover{
 
 .content{
     background-color: #F9F4F2;
+    padding: 0px 50px 10px 40px;
 }
 
 .sidebar{
     padding:50px;
-    padding-top: 4em;
     background-color: #F1DDDD;
     display: block;
     flex-flow:column wrap;
@@ -47,7 +49,7 @@ a:hover{
 }
 
 .property{
-    /*margin: 20px;*/
+    margin: 20px;
 }
 
 input[type="text"]{
@@ -133,7 +135,8 @@ select[name="genres"]{
         background-color: #ECB7B7;
         position: fixed;
         top:0px; left:0px; right: 0px;
-        padding:0.75em 0px 0.75em 0px;
+        padding: 10px 0px 10px 0px;
+        margin-bottom: 100px;
     
     }
 
@@ -174,7 +177,6 @@ select[name="genres"]{
         display: flex;
         justify-content: center;
         padding-top:0px;
-        margin:2.5em;
     }
 
     h1{
