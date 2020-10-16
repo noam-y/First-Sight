@@ -2,28 +2,10 @@
 body{
     display: block;
     box-sizing: border-box;
-    font-family: 'Piazzolla', serif;
     justify-content: center;
 }
 
-.header{
-    display:flex;
-    align-items: flex-end;
-    flex-direction: row-reverse;
-    background-color: #ECB7B7;
-    position: fixed;
-    top:0px; left:0px; right: 0px;
-    padding: 0.75em 0px 0.75em 0px;
 
-}
-
-.header a{
-    margin: 3px 20px 3px 20px
-}
-
-a:hover{
-    color: #CD6060;
-}
 
 .content{
     background-color: #F9F4F2;

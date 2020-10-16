@@ -1,0 +1,14 @@
+article{
+    margin-top:3em;
+    padding: 3em 1em 2em 1em;
+
+    background-color:#F9F4F2 ;
+    min-width: 1000px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap:1.5em;
+}
+
+div{
+    background-color: #f0d7ce;
+}
