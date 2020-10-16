@@ -1,14 +1,21 @@
-article{
-    margin-top:3em;
-    padding: 3em 1em 2em 1em;
+.movie-boxes{
 
-    background-color:#F9F4F2 ;
     min-width: 1000px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap:1.5em;
+    grid-template-columns: repeat(3, minmax(300px,400px));
+
 }
 
-div{
+.scrollable{
+    margin-top:3em;
+    padding: 3em 1em 2em 1em;
+    background-color:#F9F4F2 ;
+
+
+}
+
+.item{
     background-color: #f0d7ce;
+    height: 400px;
 }
