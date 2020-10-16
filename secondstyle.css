@@ -13,8 +13,7 @@ body{
     background-color: #ECB7B7;
     position: fixed;
     top:0px; left:0px; right: 0px;
-    padding: 10px 0px 10px 0px;
-    margin-bottom: 100px;
+    padding: 0.75em 0px 0.75em 0px;
 
 }
 
@@ -28,14 +27,13 @@ a:hover{
 
 .content{
     background-color: #F9F4F2;
-    max-width: 600px;
-    padding: 0px 50px 10px 40px;
+    padding: 2em 50px 10px 40px;
 }
 
 .sidebar{
     padding:50px;
     background-color: #F1DDDD;
-    display: flex;
+    display: block;
     flex-flow:column wrap;
 }
 
@@ -55,19 +53,21 @@ a:hover{
 input[type="text"]{
     border-radius: 10px;
     border-width: 0px;
-    margin-left:1em;
     font-family: 'Piazzolla', serif;
 
 }
 
 h1{
-    font-size: 4em;
+    font-size: 2em;
     color: #A92929;
+    
 }
 
 h3{
     color:#E95656;
     font-size: 2em;
+    text-align: center;
+
 }
 
 button{
@@ -117,8 +117,6 @@ select[name="genres"]{
     body{
         display: flex;
         flex-flow: row wrap;
-        box-sizing: border-box;
-        font-family: 'Piazzolla', serif;
         justify-content: center;
         margin:0px;
     }
@@ -139,14 +137,21 @@ select[name="genres"]{
     
     }
 
+    input[type="text"]{
+        margin-left:1em;
+    
+    }
+    
+
 
     .content{
         flex:4 400px;
         background-color: #F9F4F2;
-        max-width: 600px;
+        max-width: 40em;
         padding: 0px 50px 0px 40px;
 
     }
+
     
     .sidebar{
         padding:50px;
@@ -155,16 +160,25 @@ select[name="genres"]{
         max-width:400px;
         display: flex;
         flex-flow:column wrap;
+        align-items: center;
+
     }
 
     
     .property{
-        margin: 10px 00x
+        margin: 10px 00x;
+        display:inline-block;
     }
     
     .scrollable{
         display: flex;
         justify-content: center;
+        padding-top:0px;
+    }
+
+    h1{
+        font-size: 4em;
+        margin-bottom: 0em;
     }
     
 }
