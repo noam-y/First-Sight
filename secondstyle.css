@@ -54,7 +54,6 @@ a:hover{
 input[type="text"]{
     border-radius: 10px;
     border-width: 0px;
-    margin-left:1em;
     font-family: 'Piazzolla', serif;
 
 }
@@ -67,6 +66,8 @@ h1{
 h3{
     color:#E95656;
     font-size: 2em;
+    text-align: center;
+
 }
 
 button{
@@ -138,6 +139,12 @@ select[name="genres"]{
     
     }
 
+    input[type="text"]{
+        margin-left:1em;
+    
+    }
+    
+
 
     .content{
         flex:4 400px;
@@ -155,6 +162,8 @@ select[name="genres"]{
         max-width:400px;
         display: flex;
         flex-flow:column wrap;
+        align-items: center;
+
     }
 
     
