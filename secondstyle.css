@@ -13,8 +13,7 @@ body{
     background-color: #ECB7B7;
     position: fixed;
     top:0px; left:0px; right: 0px;
-    padding: 10px 0px 10px 0px;
-    margin-bottom: 100px;
+    padding: 0.75em 0px 0.75em 0px;
 
 }
 
@@ -28,7 +27,7 @@ a:hover{
 
 .content{
     background-color: #F9F4F2;
-    padding: 0px 50px 10px 40px;
+    padding: 2em 50px 10px 40px;
 }
 
 .sidebar{
@@ -44,7 +43,6 @@ a:hover{
 
 .scrollable{
     display: block;
-    padding-top: 4em;
 
 }
 
@@ -62,6 +60,7 @@ input[type="text"]{
 h1{
     font-size: 2em;
     color: #A92929;
+    
 }
 
 h3{
@@ -118,8 +117,6 @@ select[name="genres"]{
     body{
         display: flex;
         flex-flow: row wrap;
-        box-sizing: border-box;
-        font-family: 'Piazzolla', serif;
         justify-content: center;
         margin:0px;
     }
@@ -181,6 +178,7 @@ select[name="genres"]{
 
     h1{
         font-size: 4em;
+        margin-bottom: 0em;
     }
     
 }
