@@ -1,18 +1,8 @@
-from flask import Flask
+from flask import Flask,render_template
 import requests
 app = Flask(__name__)
 
-HTML ="""<!DOCTYPE HTML>
-     <html>
-        <head><title>Movie by search</title></head>
-        <body>
-            <h1>A page title.</h1>
-            <div>@@@overview@@@ </div>
-            <div><img src="@@@poster_img@@@" alt="movie poster"></div>
-        </body>
-    </html>
 
-"""
 
 @app.route('/<movie_q>')
 def hello_world(movie_q):
@@ -23,9 +13,10 @@ def hello_world(movie_q):
     overview = resp_json['results'][0]["overview"]
     #movie_id = resp_json['results'][0]["id"]
     #print(poster)
-    poster2 = requests.get(f'http://image.tmdb.org/t/p/w500/{poster}')
+    posterquery = 'http://image.tmdb.org/t/p/w500'+poster
 
-    result = HTML.replace("@@@poster_img@@@", poster)
-    result =HTML.replace("@@@overview@@@", overview)
-    return result
-    
+    return render_template(
+        'one-movie.html',
+        overview=overview,
+        poster_query=posterquery,
+    )
