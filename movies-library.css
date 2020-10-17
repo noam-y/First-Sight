@@ -8,7 +8,6 @@
 }
 
 .scrollable{
-    margin-top:3em;
     padding: 3em 1em 2em 1em;
     background-color:#F9F4F2 ;
     max-width: 95%;
@@ -20,4 +19,13 @@
     height: 20em;
     border-radius: 2em;
     padding:3em;
+}
+
+
+@media screen and (min-width: 600px){
+
+    .scrollable{
+        margin-top: 0em;
+    }
+
 }
