@@ -1,23 +1,23 @@
 .movie-boxes{
 
-    min-width: 1000px;
+    max-width: 90em;
     display: grid;
-    gap:1.5em;
-    grid-template-columns: repeat(3, minmax(300px,400px));
-
+    grid-gap:1.5em;
+    grid-template-columns: repeat(auto-fill, minmax(17em,20em));
+    justify-content: center;
 }
 
 .scrollable{
     margin-top:3em;
     padding: 3em 1em 2em 1em;
     background-color:#F9F4F2 ;
-
+    max-width: 95%;
 
 }
 
 .item{
     background-color: #f0d7ce;
-    height: 400px;
+    height: 20em;
     border-radius: 2em;
     padding:3em;
 }
