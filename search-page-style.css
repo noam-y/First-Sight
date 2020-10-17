@@ -48,7 +48,7 @@ h3{
 
 }
 
-button{
+input[type="button"]{
     border-radius: 10px;
     min-width:7em;
     padding:0px 30px 0px 30px;
