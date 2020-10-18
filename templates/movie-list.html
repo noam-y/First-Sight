@@ -4,7 +4,14 @@
         <body>
             <h1>movie list</h1>
 
-            <div style="display:grid; grid-template-columns: 1fr 1fr 1fr;">{{mvlist}}</div>
+
+            <div style="display:grid; grid-template-columns: 1fr 1fr 1fr;"></div>
+            <div>
+                {% for item in mvlist %}
+                    <img src="{{item['poster']}}" alt="{{item['title']}}">
+
+                {%endfor%}
+            </div>
 
         </body>
     </html>
