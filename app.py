@@ -1,18 +1,8 @@
 from flask import Flask,render_template
 import requests
+import pickle
 app = Flask(__name__)
 
-html =""" <!DOCTYPE HTML>
-     <html>
-        <head><title>Movie by search</title></head>
-        <body >
-            <h1>movie list</h1>
-
-            <div style="display:grid; grid-template-columns: 1fr 1fr 1fr;">@@@mvlist@@@</div>
-
-        </body>
-    </html>
-"""
 
 
 @app.route('/<movie_q>')
@@ -35,10 +25,6 @@ def movie_search(movie_q):
 
         all_movie_details = all_movie_details + movie_details
 
-    #all_movie_details = """{% extends "./templates/movie-list.html" %}
-    #{% block themovies %}""" + all_movie_details + """ {% endblock %}"""
-    toprint = html.replace("@@@mvlist@@@", all_movie_details)
-    return toprint
     return render_template(
         'movie-list.html',
         mvlist = all_movie_details,

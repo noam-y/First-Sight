@@ -8,13 +8,12 @@ body{
 
 
 .content{
-    background-color: #F9F4F2;
-    padding: 2em 50px 10px 40px;
+    background-color: #fff3ee;
 }
 
 .sidebar{
     padding:50px;
-    background-color: #F1DDDD;
+    background-color: #f3dede;
     display: block;
     flex-flow:column wrap;
 }
@@ -25,6 +24,7 @@ body{
 
 .scrollable{
     display: block;
+
 
 }
 
@@ -48,14 +48,14 @@ h3{
 
 }
 
-input[type="button"]{
+#submitbutton{
     border-radius: 10px;
     min-width:7em;
     padding:0px 30px 0px 30px;
     min-height:2em;
     border-width: 0px;
-    background-color: #AB4545;
-    color: #000010;
+    background-color: #f3546e;
+    color: #fffdf9;
     font-weight: bold;
     padding:10px;
     margin: 20px;
@@ -65,7 +65,7 @@ input[type="button"]{
 
 }
 
-button:hover{
+#submitbutton:hover{
     background-color:#A92929 ;
 }
 
@@ -89,6 +89,27 @@ select[name="genres"]{
 
 }
 
+.suggestion-bar {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    
+    
+}
+
+.suggested-movie-list{
+    background-color: #c8d0e6;
+    border-radius: 0.2em;
+    border-width: 0px;
+    margin: 0.4em ;
+    padding:0.4em;
+    font-size: 1em;
+    font-family:'Piazzolla', serif;
+}
+
+.suggested-movie-list:hover{
+    background-color: #abbcf1;
+}
 
 
 @media screen and (min-width: 600px){
@@ -124,16 +145,15 @@ select[name="genres"]{
 
     .content{
         flex:4 400px;
-        background-color: #F9F4F2;
+
         max-width: 40em;
-        padding: 0px 50px 0px 40px;
+        padding: 0px 50px 5em 40px;
 
     }
 
     
     .sidebar{
         padding:50px;
-        background-color: #F1DDDD;
         flex: 3 300px;
         max-width:400px;
         display: flex;

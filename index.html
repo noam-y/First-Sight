@@ -20,7 +20,18 @@
             <h1>First sight</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vulputate imperdiet magna, ac tempor mi finibus eget. Duis vitae nunc ac est efficitur egestas quis ac orci. Aliquam erat volutpat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam ex nunc, luctus quis ornare et, vestibulum viverra nisl. Aenean ac tellus elit. Praesent nibh arcu, tincidunt in interdum id, suscipit at nisi. Proin lectus ex, mollis ullamcorper ligula vel, pulvinar pellentesque tellus. Maecenas vitae molestie ligula. Morbi in urna laoreet, vehicula neque id, ullamcorper nunc. Pellentesque nisl dolor, commodo hendrerit lacinia ut, pulvinar eget quam. In vestibulum felis a ipsum euismod, id aliquet nunc iaculis. Vivamus eu nulla nec justo finibus sodales. Duis convallis, lorem eu scelerisque egestas, libero turpis vehicula quam, interdum blandit orci magna eget justo. Donec eleifend quam eu dui mollis ultricies.
 
-                Etiam finibus, nisl sed lacinia ultrices, lectus lacus congue eros, sed rutrum sapien magna in dolor. Duis rutrum iaculis nunc sed commodo. Donec vel volutpat nibh, a lobortis mi. Maecenas pulvinar, nisl non faucibus imperdiet, enim eros dignissim orci, sed ornare libero ligula sit amet lacus. Maecenas accumsan leo justo, vel iaculis massa accumsan nec. Donec quis consectetur magna, tristique posuere quam. Phasellus viverra, nunc at aliquet suscipit, turpis ex elementum lectus, et volutpat ante leo ac erat. Suspendisse bibendum diam massa, sit amet condimentum dui ornare et. </p>
+                Etiam finibus, nisl sed lacinia ultrices, lectus lacus congue eros, sed rutrum sapien magna in dolor. Duis rutrum iaculis nunc sed commodo. Donec vel volutpat nibh, a lobortis mi. Maecenas pulvinar, nisl non faucibus imperdiet, enim eros dignissim orci, sed ornare libero ligula sit amet lacus. Maecenas accumsan leo justo, vel iaculis massa accumsan nec. Donec quis consectetur magna, tristique posuere quam. Phasellus viverra, nunc at aliquet suscipit, turpis ex elementum lectus, et volutpat ante leo ac erat. Suspendisse bibendum diam massa, sit amet condimentum dui ornare et.
+            </p>
+            <h3>Explore by category.</h3>
+
+                <div class="suggestion-bar">
+                    <input class= "suggested-movie-list" type="button" onclick="location.href='recommended-movies.html'" value="All time favorites" >
+                    <input class= "suggested-movie-list" type="button" onclick="location.href='recommended-movies.html'" value="Trending" >
+                    <input class= "suggested-movie-list" type="button" onclick="location.href='recommended-movies.html'" value="Upcoming movies" >
+                    <input class= "suggested-movie-list" type="button" onclick="location.href='recommended-movies.html'" value="Latest drops" >
+                    <input class= "suggested-movie-list" type="button" onclick="location.href='recommended-movies.html'" value="Now playing" >
+                </div>
+    
         </article>
 
         <article class="sidebar">
@@ -45,10 +56,15 @@
                 <input type="text"> <br>
             </div>
 
-            <input type="button" onclick="location.href='recommended-movies.html'" value="Search Movies" >
+            <input type="button" id="submitbutton" onclick="location.href='recommended-movies.html'" value="Search Movies" >
+
+
+            
 
 
         </article>
     </div>
 </body>
 </html>
+
+
