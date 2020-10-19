@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href=".\resources\styles\movies-library.css">
+        <link rel="stylesheet" href="..\static\styles\movies-library.css">
         <link href="https://fonts.googleapis.com/css2?family=Piazzolla:wght@700&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width,initial-scale=1">
-        <link rel="stylesheet" href=".\resources\styles\generic-style.css">
-        <link rel="icon" href=".\resources\images\movie-icon.png">
+        <link rel="stylesheet" href="../static/styles/generic-style.css">
+        <link rel="icon" href="../resources/images/movie-icon.png">
         <title>First Sight- Your library</title>
 
     </head>
@@ -20,14 +20,12 @@
     <article class="scrollable">
         <div><h1> WEBSITE!!!!!</h1></div>
             <article class="movie-boxes">
-            <div class="item"> FIRST</div>
-            <div class="item"> FIRST</div>
-            <div class="item"> FIRST</div>
-            <div class="item"> FIRST</div>
-            <div class="item"> FIRST</div>
-            <div class="item"> FIRST</div>
-            <div class="item"> FIRST</div>
-            <div class="item"> FIRST</div>
+                {% for item in mvlist %}
+                <div>
+                    <img id="movie-poster" class="item" src="{{item['poster']}}" alt="{{item['title']}}">
+                </div>
+                {%endfor%}
+            
         </article>
         </article>
     </body>

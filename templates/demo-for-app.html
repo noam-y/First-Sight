@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../resources/styles/movies-library.css">
+        <link href="https://fonts.googleapis.com/css2?family=Piazzolla:wght@700&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/generic-style.css') }}">
+        
+        <link rel="icon" href="..\images\movie-icon.png">
+        <title>First Sight- Your library</title>
+
+    </head>
+
+
+
+    <body>
+        <header class="header">
+            <a link="">Contact us</a>
+            <a link="">About</a>
+        </header>
+    <article class="scrollable">
+        <div><h1> WEBSITE!!!!!</h1></div>
+            <article class="movie-boxes" style="
+            max-width: 90em;
+            display: grid;
+            grid-gap:1.5em;
+            grid-template-columns: repeat(auto-fill, minmax(17em,20em));
+            justify-content: center;">
+
+            {% for item in mvlist %}
+            <div class="item">
+                <img src="{{item['poster']}}" alt="{{item['title']}}">
+            </div>
+            {%endfor%}
+            
+        </article>
+    </article>
+    </body>
+</html>
