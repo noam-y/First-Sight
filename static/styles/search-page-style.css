@@ -43,9 +43,7 @@ input[type="text"], input[type="number"]{
     font-family: 'Piazzolla', serif;
 
 }
-
-
-
+  
 h3{
     color:#E95656;
     font-size: 2em;
@@ -68,6 +66,7 @@ h3{
     font-family: 'Piazzolla', serif;
     font-size: 1.5em;
     display: block;
+    
 
 }
 
@@ -99,9 +98,8 @@ select[name="genres"]{
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    
-    
 }
+
 
 .suggested-movie-list{
     background-color: #c8d0e6;
@@ -115,6 +113,8 @@ select[name="genres"]{
 
 .suggested-movie-list:hover{
     background-color: #abbcf1;
+    transition: all 0.45s ease;
+
 }
 
 
@@ -179,6 +179,8 @@ select[name="genres"]{
         justify-content: center;
         padding-top:0px;
     }
+
+    
 
 
     

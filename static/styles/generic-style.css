@@ -52,6 +52,7 @@ h1{
         top:0px; left:0px; right: 0px;
         padding: 10px 0px 10px 0px;
         margin-bottom: 100px;
+        z-index: 3;
     
     }
 

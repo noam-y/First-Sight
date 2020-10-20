@@ -1,10 +1,18 @@
-.movie-boxes{
+.scrollable{
+    padding: 5em 1em 2em 1em;
+    background-color:#F9F4F2 ;
+    max-width: 95%;
 
+}
+
+
+.movie-boxes{
     max-width: 90em;
     display: grid;
     grid-gap:1.5em;
     grid-template-columns: repeat(auto-fill, minmax(17em,20em));
     justify-content: center;
+    padding: 4em 2em 4em 2em;
 }
 
 #movie-poster{
@@ -13,26 +21,10 @@
     max-height: 100%;
     max-width: 100%;
     box-sizing:border-box;
-}
-
-
-.item{
-    background-color: #f0d7ce;
-    max-width: inherit;
-    max-height: inherit;
     border-radius: 2em;
-    padding:0em;
-}
-
-
-
-.scrollable{
-    padding: 3em 1em 2em 1em;
-    background-color:#F9F4F2 ;
-    max-width: 95%;
+    background-color: #f0d7ce;
 
 }
-
 
 
 @media screen and (min-width: 600px){
@@ -42,3 +34,5 @@
     }
 
 }
+
+

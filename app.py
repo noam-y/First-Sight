@@ -1,16 +1,12 @@
 from flask import Flask,render_template,request,redirect,url_for
 import requests,json
 import pdb
-API_KEY='b1a92c686f2982862df95e0cdf1b9c38'
-
+from mykeys import API_KEY
 app = Flask(__name__)
 
-@app.route("/")
-def base():
-    return render_template("extender.html")
 
 
-@app.route('/home', methods =['POST','GET'])
+@app.route('/', methods =['POST','GET'])
 def homepage():
     if request.method == 'POST':
         text_search = request.form['searchtext']

@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="stylesheet" href="../static/styles/generic-style.css">
         <link rel="icon" href="../resources/images/movie-icon.png">
+        <link rel='stylesheet' href="../static/styles/hover.css">
         <title>First Sight- Your library</title>
 
     </head>
@@ -18,12 +19,15 @@
             <a link="">About</a>
         </header>
     <article class="scrollable">
-        <div><h1> WEBSITE!!!!!</h1></div>
+        <div><h1 style="text-align: center;"> This is what you came for.</h1></div>
             <article class="movie-boxes">
                 {% for item in mvlist %}
-                <div>
-                    <img id="movie-poster" class="item" src="{{item['poster']}}" alt="{{item['title']}}">
-                </div>
+                
+                    <figure class="hover-img">
+                    <img id="movie-poster" src="{{item['poster']}}" alt="{{item['title']}}">
+                    <figcaption> <p> {{item['title']}} </p></figcaption>
+                    </figure>
+                
                 {%endfor%}
             
         </article>
