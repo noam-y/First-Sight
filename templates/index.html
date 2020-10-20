@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href=".\resources\styles\search-page-style.css">
-    <link rel="stylesheet" href=".\resources\styles\generic-style.css">
+    <link rel="stylesheet" href="../static/styles/search-page-style.css">
+    <link rel="stylesheet" href="../static/styles/generic-style.css">
     <link href="https://fonts.googleapis.com/css2?family=Piazzolla:wght@700&display=swap" rel="stylesheet">
     <link rel="icon" href=".\resources\images\movie-icon.png">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -36,31 +36,38 @@
 
         <article class="sidebar">
             <h3>Search your next favorite movie!</h3>
-            <div class="property">
-                <label>genre:</label>
-                <select name="genres" id="genres">
-                    <option value="comedy">Comedy</option>
-                    <option value="action">Action</option>
-                    <option value="romantic">Romantic</option>
-                    <option value="family friendly">Family friendly</option>
-                  </select>
-            </div>
+            <form action="{{url_for('category_search')}}" method="POST">
+                <div class="property">
+                    <label>genre:</label>
+                    <select name="genres" id="genres">
+                        <option value="35">Comedy</option>
+                        <option value="28">Action</option>
+                        <option value="10749">Romantic</option>
+                        <option value="10751">Family friendly</option>
+                      </select>
+                </div>
+    
+                <div class="property"> 
+                    <label>movie length:</label>
+                    <input type="number" min="0" name="length"> <br>
+                </div>
+    
+                <div class="property">
+                    <input type="checkbox" name="agelimit"> 
+                    <label>age limit</label> <br>
+                </div>
+    
+                <input type="submit" id="submitbutton"  value="Search Movies" >
 
-            <div class="property"> 
-                <label>movie length:</label>
-                <input type="text"> <br>
-            </div>
+            </form>
+        
 
-            <div class="property">
-                <label>age limit:</label>
-                <input type="text"> <br>
-            </div>
-
-            <input type="button" id="submitbutton" onclick="location.href='recommended-movies.html'" value="Search Movies" >
-
-
-            
-
+            <h3>You can also search by name.</h3>
+            <form action="#" method="POST">
+                <label>Movie name:</label>
+                <input type="text" name="searchtext">
+                <input type="submit"  id="submitbutton" value="submit!">
+            </form>
 
         </article>
     </div>

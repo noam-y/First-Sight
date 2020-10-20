@@ -29,11 +29,15 @@ body{
 
 }
 
+form{
+    display: block;
+}
+
 .property{
     margin: 20px;
 }
 
-input[type="text"]{
+input[type="text"], input[type="number"]{
     border-radius: 10px;
     border-width: 0px;
     font-family: 'Piazzolla', serif;
@@ -63,6 +67,7 @@ h3{
     align-self: flex-end;
     font-family: 'Piazzolla', serif;
     font-size: 1.5em;
+    display: block;
 
 }
 

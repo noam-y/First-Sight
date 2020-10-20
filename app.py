@@ -1,6 +1,7 @@
 from flask import Flask,render_template,request,redirect,url_for
 import requests,json
-
+import pdb
+API_KEY='b1a92c686f2982862df95e0cdf1b9c38'
 
 app = Flask(__name__)
 
@@ -8,36 +9,79 @@ app = Flask(__name__)
 def base():
     return render_template("extender.html")
 
-@app.route('/search/<movie_q>')
+
+@app.route('/home', methods =['POST','GET'])
+def homepage():
+    if request.method == 'POST':
+        text_search = request.form['searchtext']
+        return redirect(url_for("movie_search",movie_q=text_search))
+    else:
+        return render_template('index.html')
+
+@app.route('/<movie_q>')
 def movie_search(movie_q):
-    movie_q=movie_q.lower()
-    resp = requests.get(f'https://api.themoviedb.org/3/search/movie?api_key=b1a92c686f2982862df95e0cdf1b9c38&language=en-US&query={movie_q}&page=1&include_adult=false')
+    
+    resp = requests.get(f'https://api.themoviedb.org/3/search/movie?api_key={API_KEY}&language=en-US&query={movie_q}&page=1&include_adult=false')
     resp_json = resp.json()
+
+
     json_movie_list=[]
     for movie in resp_json['results']:
-        json_movie_details = {'title':movie["original_title"], 'overview':movie['overview'], 'poster':'http://image.tmdb.org/t/p/w500'+movie["poster_path"]}
+        try:
+            json_movie_details = {'title':movie["original_title"], 'overview':movie['overview'], 'poster':'http://image.tmdb.org/t/p/w500'+movie["poster_path"]}
+        except(TypeError):
+            json_movie_details = {'title':movie["original_title"], 'overview':movie['overview'], 'poster':'https://www.onlygfx.com/wp-content/uploads/2017/11/grunge-question-mark-2-148x300.png'}
         json_movie_list.append(json_movie_details)
-
+    #pdb.set_trace()
     return render_template( 
         'recommended-movies.html',
         mvlist = json_movie_list,
     )
 
 
-@app.route("/login", methods=["POST","GET"])
-def login():
-    if request.method == "POST":
-        user = request.form["nm"]
-        return redirect(url_for("user",usr=user))
-    else:
-        return render_template("login.html")
+@app.route("/C-search",methods=['POST','GET'])
+def category_search():
+    #pdb.set_trace()
+    if request.method == 'POST':
+        genres = request.form['genres']
+        age_limit = request.form.get('agelimit') != None
+        time_limit =  request.form.get('length') 
 
-@app.route("/<usr>")
-def user(usr):
-    return f"<h1>{usr}</h1>"
+        #checks that time limit input is valid
+        search_query = f'https://api.themoviedb.org/3/discover/movie?api_key={API_KEY}&include_adult={age_limit}&with_genres={genres}&page=1'
+        resp = requests.get(search_query)
+        resp_json = resp.json()
+
+        json_movie_list=[]
+        for movie in resp_json['results']:
+            try:
+                json_movie_details = {'title':movie["original_title"], 'overview':movie['overview'], 'poster':'http://image.tmdb.org/t/p/w500'+movie["poster_path"]}
+            except(TypeError):
+                json_movie_details = {'title':movie["original_title"], 'overview':movie['overview'], 'poster':'https://www.onlygfx.com/wp-content/uploads/2017/11/grunge-question-mark-2-148x300.png'}
+            json_movie_list.append(json_movie_details)
+        #pdb.set_trace()
+        return render_template( 
+            'recommended-movies.html',
+            mvlist = json_movie_list,
+        )
+    else:
+        #pdb.set_trace()
+        return '<p>Try again.</p>'
+
+
 
 
 if __name__ == "__main__":
     app.run(debug=True)
 
 
+
+def sort_out_movies(resp_json):
+    json_movie_list=[]
+    for movie in resp_json['results']:
+        try:
+            json_movie_details = {'title':movie["original_title"], 'overview':movie['overview'], 'poster':'http://image.tmdb.org/t/p/w500'+movie["poster_path"]}
+        except(TypeError):
+            json_movie_details = {'title':movie["original_title"], 'overview':movie['overview'], 'poster':'https://www.onlygfx.com/wp-content/uploads/2017/11/grunge-question-mark-2-148x300.png'}
+            json_movie_list.append(json_movie_details)
+    return json_movie_list
