@@ -39,7 +39,7 @@
             <form action="{{url_for('category_search')}}" method="POST">
                 <div class="property">
                     <label>genre:</label>
-                    <select name="genres" id="genres">
+                    <select name="genres" id="genres" multiple>
                         <option value="35">Comedy</option>
                         <option value="28">Action</option>
                         <option value="10749">Romantic</option>
@@ -48,13 +48,13 @@
                 </div>
     
                 <div class="property"> 
-                    <label>movie length:</label>
+                    <label>time limit</label>
                     <input type="number" min="0" name="length"> <br>
                 </div>
     
                 <div class="property">
                     <input type="checkbox" name="agelimit"> 
-                    <label>age limit</label> <br>
+                    <label>18+?</label> <br>
                 </div>
     
                 <input type="submit" id="submitbutton"  value="Search Movies" >

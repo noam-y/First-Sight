@@ -43,27 +43,22 @@ def movie_search(movie_q):
 def category_search():
     #pdb.set_trace()
     if request.method == 'POST':
-        genres = request.form['genres']
-        age_limit = request.form.get('agelimit') != None
+        genres = ','.join(request.form.getlist('genres'))
+        include_adult = request.form.get('agelimit') != None
         time_limit =  request.form.get('length') 
 
-        #checks that time limit input is valid
-        search_query = f'https://api.themoviedb.org/3/discover/movie?api_key={API_KEY}&include_adult={age_limit}&with_genres={genres}&page=1'
-        resp = requests.get(search_query)
-        resp_json = resp.json()
+        search_query = f'https://api.themoviedb.org/3/discover/movie?api_key={API_KEY}&include_adult={include_adult}&with_genres={genres}&page=1'
 
-        json_movie_list=[]
-        for movie in resp_json['results']:
-            try:
-                json_movie_details = {'title':movie["original_title"], 'overview':movie['overview'], 'poster':'http://image.tmdb.org/t/p/w500'+movie["poster_path"]}
-            except(TypeError):
-                json_movie_details = {'title':movie["original_title"], 'overview':movie['overview'], 'poster':'https://www.onlygfx.com/wp-content/uploads/2017/11/grunge-question-mark-2-148x300.png'}
-            json_movie_list.append(json_movie_details)
-        #pdb.set_trace()
+        #checks that time limit input is valid
+        if time_limit != '':
+            search_query = search_query+ f'&with_runtime.lte={time_limit}'
+
+        json_movie_list = sort_out_movies(search_query)  
         return render_template( 
             'recommended-movies.html',
             mvlist = json_movie_list,
         )
+
     else:
         #pdb.set_trace()
         return '<p>Try again.</p>'
@@ -76,12 +71,16 @@ if __name__ == "__main__":
 
 
 
-def sort_out_movies(resp_json):
-    json_movie_list=[]
-    for movie in resp_json['results']:
-        try:
-            json_movie_details = {'title':movie["original_title"], 'overview':movie['overview'], 'poster':'http://image.tmdb.org/t/p/w500'+movie["poster_path"]}
-        except(TypeError):
-            json_movie_details = {'title':movie["original_title"], 'overview':movie['overview'], 'poster':'https://www.onlygfx.com/wp-content/uploads/2017/11/grunge-question-mark-2-148x300.png'}
+def sort_out_movies(search_query):
+        resp = requests.get(search_query)
+        resp_json = resp.json()
+
+        json_movie_list=[]
+        for movie in resp_json['results']:
+            try:
+                json_movie_details = {'title':movie["original_title"], 'overview':movie['overview'], 'poster':'http://image.tmdb.org/t/p/w500'+movie["poster_path"]}
+            except(TypeError):
+                json_movie_details = {'title':movie["original_title"], 'overview':movie['overview'], 'poster':'https://www.onlygfx.com/wp-content/uploads/2017/11/grunge-question-mark-2-148x300.png'}
             json_movie_list.append(json_movie_details)
-    return json_movie_list
+        return list(json_movie_list)
+
