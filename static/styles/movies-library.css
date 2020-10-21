@@ -1,0 +1,38 @@
+.scrollable{
+    padding: 5em 1em 2em 1em;
+    background-color:#F9F4F2 ;
+    max-width: 95%;
+
+}
+
+
+.movie-boxes{
+    max-width: 90em;
+    display: grid;
+    grid-gap:1.5em;
+    grid-template-columns: repeat(auto-fill, minmax(17em,20em));
+    justify-content: center;
+    padding: 4em 2em 4em 2em;
+}
+
+#movie-poster{
+    display: block;
+    margin: auto;
+    max-height: 100%;
+    max-width: 100%;
+    box-sizing:border-box;
+    border-radius: 2em;
+    background-color: #f0d7ce;
+
+}
+
+
+@media screen and (min-width: 600px){
+
+    .scrollable{
+        margin-top: 0em;
+    }
+
+}
+
+

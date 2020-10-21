@@ -2,37 +2,19 @@
 body{
     display: block;
     box-sizing: border-box;
-    font-family: 'Piazzolla', serif;
     justify-content: center;
 }
 
-.header{
-    display:flex;
-    align-items: flex-end;
-    flex-direction: row-reverse;
-    background-color: #ECB7B7;
-    position: fixed;
-    top:0px; left:0px; right: 0px;
-    padding: 0.75em 0px 0.75em 0px;
 
-}
-
-.header a{
-    margin: 3px 20px 3px 20px
-}
-
-a:hover{
-    color: #CD6060;
-}
 
 .content{
-    background-color: #F9F4F2;
-    padding: 2em 50px 10px 40px;
+    background-color: #fff3ee;
+    padding: 2em 50px 3em 40px;
 }
 
 .sidebar{
     padding:50px;
-    background-color: #F1DDDD;
+    background-color: #f3dede;
     display: block;
     flex-flow:column wrap;
 }
@@ -44,25 +26,24 @@ a:hover{
 .scrollable{
     display: block;
 
+
+}
+
+form{
+    display: block;
 }
 
 .property{
     margin: 20px;
 }
 
-input[type="text"]{
+input[type="text"], input[type="number"]{
     border-radius: 10px;
     border-width: 0px;
     font-family: 'Piazzolla', serif;
 
 }
-
-h1{
-    font-size: 2em;
-    color: #A92929;
-    
-}
-
+  
 h3{
     color:#E95656;
     font-size: 2em;
@@ -70,24 +51,26 @@ h3{
 
 }
 
-button{
+#submitbutton{
     border-radius: 10px;
     min-width:7em;
     padding:0px 30px 0px 30px;
     min-height:2em;
     border-width: 0px;
-    background-color: #AB4545;
-    color: #000010;
+    background-color: #f3546e;
+    color: #fffdf9;
     font-weight: bold;
     padding:10px;
     margin: 20px;
     align-self: flex-end;
     font-family: 'Piazzolla', serif;
     font-size: 1.5em;
+    display: block;
+    
 
 }
 
-button:hover{
+#submitbutton:hover{
     background-color:#A92929 ;
 }
 
@@ -111,6 +94,28 @@ select[name="genres"]{
 
 }
 
+.suggestion-bar {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+
+.suggested-movie-list{
+    background-color: #c8d0e6;
+    border-radius: 0.2em;
+    border-width: 0px;
+    margin: 0.4em ;
+    padding:0.4em;
+    font-size: 1em;
+    font-family:'Piazzolla', serif;
+}
+
+.suggested-movie-list:hover{
+    background-color: #abbcf1;
+    transition: all 0.45s ease;
+
+}
 
 
 @media screen and (min-width: 600px){
@@ -146,16 +151,15 @@ select[name="genres"]{
 
     .content{
         flex:4 400px;
-        background-color: #F9F4F2;
+
         max-width: 40em;
-        padding: 0px 50px 0px 40px;
+        padding: 0px 50px 5em 40px;
 
     }
 
     
     .sidebar{
         padding:50px;
-        background-color: #F1DDDD;
         flex: 3 300px;
         max-width:400px;
         display: flex;
@@ -176,9 +180,8 @@ select[name="genres"]{
         padding-top:0px;
     }
 
-    h1{
-        font-size: 4em;
-        margin-bottom: 0em;
-    }
+    
+
+
     
 }
