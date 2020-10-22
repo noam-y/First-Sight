@@ -1,21 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="../static/styles/search-page-style.css">
-    <link rel="stylesheet" href="../static/styles/generic-style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Piazzolla:wght@700&display=swap" rel="stylesheet">
-    <link rel="icon" href=".\resources\images\movie-icon.png">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>First Sight</title>
+{% extends 'base.j2' %}
 
+{% block heads %}
+<link rel="stylesheet" href="../static/styles/search-page-style.css">
+{% endblock %}
+    
 
-</head>
-<body>
-    <header>
-        <a link="">Contact us</a>
-        <a link="">About</a>
-    </header>
-    <div class="scrollable"> 
+{% block content %}
         <article class="content">
             <h1>First sight</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vulputate imperdiet magna, ac tempor mi finibus eget. Duis vitae nunc ac est efficitur egestas quis ac orci. Aliquam erat volutpat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam ex nunc, luctus quis ornare et, vestibulum viverra nisl. Aenean ac tellus elit. Praesent nibh arcu, tincidunt in interdum id, suscipit at nisi. Proin lectus ex, mollis ullamcorper ligula vel, pulvinar pellentesque tellus. Maecenas vitae molestie ligula. Morbi in urna laoreet, vehicula neque id, ullamcorper nunc. Pellentesque nisl dolor, commodo hendrerit lacinia ut, pulvinar eget quam. In vestibulum felis a ipsum euismod, id aliquet nunc iaculis. Vivamus eu nulla nec justo finibus sodales. Duis convallis, lorem eu scelerisque egestas, libero turpis vehicula quam, interdum blandit orci magna eget justo. Donec eleifend quam eu dui mollis ultricies.
@@ -72,8 +62,6 @@
             </form>
 
         </article>
-    </div>
-</body>
-</html>
 
 
+{% endblock %}

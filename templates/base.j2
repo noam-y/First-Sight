@@ -11,8 +11,7 @@
 </head>
 <body>
     <header>
-        <a link="">Contact us</a>
-        <a link="">About</a>
+        <a link="{{url_for('get_suggested_lists',buttonclicked='Trending')}}">Suggested movies</a>
     </header>
     <div class="scrollable"> 
 {% block content %}{% endblock %}
@@ -22,5 +21,3 @@
     </div>
 </body>
 </html>
-
-

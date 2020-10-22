@@ -19,7 +19,7 @@ def homepage():
         text_search = request.form['searchtext']
         return redirect(url_for("movie_search",movie_q=text_search))
     else:
-        return render_template('index.j2', genres = get_movie_genres())
+        return render_template('index.html', genres = get_movie_genres())
 
 
 @app.route('/suggested-list')
