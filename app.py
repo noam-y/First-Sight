@@ -19,7 +19,7 @@ def homepage():
         text_search = request.form['searchtext']
         return redirect(url_for("movie_search",movie_q=text_search))
     else:
-        return render_template('index.html')
+        return render_template('index.html', genres = get_movie_genres())
 
 
 @app.route('/suggested-list')
@@ -67,6 +67,14 @@ def category_search():
     else:
         return '<p>Try again.!!!</p>'
 
+@app.route('/<movie_id>')
+def get_by_id(movie_id):
+    search_query = f'https://api.themoviedb.org/3/movie/{movie_id}?api_key={API_KEY}&language=en-US'
+    resp = requests.get(search_query)
+    resp_json = resp.json()
+    return sort_one_movie(resp_json,single=True)
+
+
 
 def sort_out_movies(search_query):
         resp = requests.get(search_query)
@@ -82,18 +90,29 @@ def sort_out_movies(search_query):
         )
 
 
+
+def get_movie_genres():
+    query = f'https://api.themoviedb.org/3/genre/movie/list?api_key={API_KEY}&language=en-US'
+    resp = requests.get(query)
+    resp_json = resp.json()
+
+    return resp_json['genres']
+
+
+
+
 def sort_one_movie(movie, single = False):
     if 'title' in movie:
         try:
-            json_movie_details = {'title':movie["title"], 'overview':movie['overview'], 'poster':'http://image.tmdb.org/t/p/w500'+movie["poster_path"]}
+            json_movie_details = {'title':movie["title"], 'overview':movie['overview'], 'poster':'http://image.tmdb.org/t/p/w500'+movie["poster_path"], 'id':movie["id"]}
         except(TypeError):
-            json_movie_details = {'title':movie["title"], 'overview':movie['overview'], 'poster':QUESTION_MARK}
+            json_movie_details = {'title':movie["title"], 'overview':movie['overview'], 'poster':QUESTION_MARK, 'id':movie["id"]}
 
     else:
         try:
-            json_movie_details = {'title':movie["name"], 'overview':movie['overview'], 'poster':'http://image.tmdb.org/t/p/w500'+movie["poster_path"]}
+            json_movie_details = {'title':movie["name"], 'overview':movie['overview'], 'poster':'http://image.tmdb.org/t/p/w500'+movie["poster_path"], 'id':movie["id"]}
         except(TypeError):
-            json_movie_details = {'title':movie["name"], 'overview':movie['overview'], 'poster':QUESTION_MARK}
+            json_movie_details = {'title':movie["name"], 'overview':movie['overview'], 'poster':QUESTION_MARK, 'id':movie["id"]}
 
 
     if single:
