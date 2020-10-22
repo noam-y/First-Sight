@@ -3,7 +3,7 @@ import requests,json
 import pdb
 API_KEY ='b1a92c686f2982862df95e0cdf1b9c38'
 app = Flask(__name__)
-
+QUESTION_MARK = 'https://i.ibb.co/DGzd68n/q-mark.png'
 
 
 suggested ={
@@ -68,10 +68,6 @@ def category_search():
         return '<p>Try again.!!!</p>'
 
 
-
-
-
-
 def sort_out_movies(search_query):
         resp = requests.get(search_query)
         resp_json = resp.json()
@@ -91,13 +87,13 @@ def sort_one_movie(movie, single = False):
         try:
             json_movie_details = {'title':movie["title"], 'overview':movie['overview'], 'poster':'http://image.tmdb.org/t/p/w500'+movie["poster_path"]}
         except(TypeError):
-            json_movie_details = {'title':movie["title"], 'overview':movie['overview'], 'poster':'https://i.ibb.co/DGzd68n/q-mark.png'}
+            json_movie_details = {'title':movie["title"], 'overview':movie['overview'], 'poster':QUESTION_MARK}
 
     else:
         try:
             json_movie_details = {'title':movie["name"], 'overview':movie['overview'], 'poster':'http://image.tmdb.org/t/p/w500'+movie["poster_path"]}
         except(TypeError):
-            json_movie_details = {'title':movie["name"], 'overview':movie['overview'], 'poster':'https://i.ibb.co/DGzd68n/q-mark.png'}
+            json_movie_details = {'title':movie["name"], 'overview':movie['overview'], 'poster':QUESTION_MARK}
 
 
     if single:
