@@ -22,7 +22,20 @@ def homepage():
         return render_template('index.html')
 
 
+@app.route('/suggested-list')
+def get_suggested_lists():
+    buttonclicked = request.args.get('buttonclicked')
+    search_query = suggested[buttonclicked]
 
+    if buttonclicked == 'Latest':
+        resp = requests.get(search_query)
+        resp_json = resp.json()
+        return sort_one_movie(resp_json, single=True)
+    else:
+        return sort_out_movies(search_query)
+
+
+    return f'<h1>{buttonclicked} </h1>'
 
 
 
@@ -73,7 +86,7 @@ def sort_out_movies(search_query):
         )
 
 
-def sort_one_movie(movie):
+def sort_one_movie(movie, single = False):
     if 'title' in movie:
         try:
             json_movie_details = {'title':movie["title"], 'overview':movie['overview'], 'poster':'http://image.tmdb.org/t/p/w500'+movie["poster_path"]}
@@ -86,7 +99,14 @@ def sort_one_movie(movie):
         except(TypeError):
             json_movie_details = {'title':movie["name"], 'overview':movie['overview'], 'poster':'https://www.onlygfx.com/wp-content/uploads/2017/11/grunge-question-mark-2-148x300.png'}
 
-    return json_movie_details
+
+    if single:
+        return render_template(
+            'onemovie.html',
+            mv =json_movie_details,
+        )
+    else:
+        return json_movie_details
             
 
 

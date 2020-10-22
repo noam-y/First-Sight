@@ -25,11 +25,10 @@
             <h3>Explore by category.</h3>
 
                 <div class="suggestion-bar">
-                    <input class= "suggested-movie-list" type="button" onclick="location.href='recommended-movies.html'" value="All time favorites" >
-                    <input class= "suggested-movie-list" type="button" onclick="location.href='recommended-movies.html'" value="Trending" >
-                    <input class= "suggested-movie-list" type="button" onclick="location.href='recommended-movies.html'" value="Upcoming movies" >
-                    <input class= "suggested-movie-list" type="button" onclick="location.href='recommended-movies.html'" value="Latest drops" >
-                    <input class= "suggested-movie-list" type="button" onclick="location.href='recommended-movies.html'" value="Now playing" >
+                    <input class= "suggested-movie-list" type="button" onclick="window.location.href='{{url_for('get_suggested_lists',buttonclicked='Trending')}}'" value="Trending" >
+                    <input class= "suggested-movie-list" type="button" onclick="window.location.href='{{url_for('get_suggested_lists',buttonclicked='Latest')}}'" value="Latest drop" >
+                    <input class= "suggested-movie-list" type="button" onclick="window.location.href='{{url_for('get_suggested_lists',buttonclicked='Upcoming')}}'" value="Upcoming movies" >
+
                 </div>
     
         </article>
