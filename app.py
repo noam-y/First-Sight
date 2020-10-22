@@ -28,9 +28,8 @@ def get_suggested_lists():
     search_query = suggested[buttonclicked]
 
     if buttonclicked == 'Latest':
-        search_query = 'https://api.themoviedb.org/3/search/movie?api_key=b1a92c686f2982862df95e0cdf1b9c38&language=en-US&query=A%20Blue%20Ridge%20Mountain%20Christmas&page=1&include_adult=false'
         resp = requests.get(search_query)
-        resp_json = resp.json()['results'][0]
+        resp_json = resp.json()
         return sort_one_movie(resp_json, single=True)
     else:
         return sort_out_movies(search_query)
@@ -92,13 +91,13 @@ def sort_one_movie(movie, single = False):
         try:
             json_movie_details = {'title':movie["title"], 'overview':movie['overview'], 'poster':'http://image.tmdb.org/t/p/w500'+movie["poster_path"]}
         except(TypeError):
-            json_movie_details = {'title':movie["title"], 'overview':movie['overview'], 'poster':'https://www.onlygfx.com/wp-content/uploads/2017/11/grunge-question-mark-2-148x300.png'}
+            json_movie_details = {'title':movie["title"], 'overview':movie['overview'], 'poster':'https://i.ibb.co/DGzd68n/q-mark.png'}
 
     else:
         try:
             json_movie_details = {'title':movie["name"], 'overview':movie['overview'], 'poster':'http://image.tmdb.org/t/p/w500'+movie["poster_path"]}
         except(TypeError):
-            json_movie_details = {'title':movie["name"], 'overview':movie['overview'], 'poster':'https://www.onlygfx.com/wp-content/uploads/2017/11/grunge-question-mark-2-148x300.png'}
+            json_movie_details = {'title':movie["name"], 'overview':movie['overview'], 'poster':'https://i.ibb.co/DGzd68n/q-mark.png'}
 
 
     if single:
@@ -116,3 +115,5 @@ def sort_one_movie(movie, single = False):
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+

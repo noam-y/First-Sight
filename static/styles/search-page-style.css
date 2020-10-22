@@ -81,15 +81,6 @@ select[name="genres"]{
 
 }
 
-.ellipse{
-    position: absolute;
-    width: 867px;
-    height: 878px;
-    float:left;
-    background: #A05252;
-    mix-blend-mode: screen;
-
-}
 
 .suggestion-bar {
     display: flex;
@@ -109,7 +100,7 @@ select[name="genres"]{
 }
 
 .suggested-movie-list:hover{
-    background-color: #abbcf1;
+    background-color: #95a9e5;
     transition: all 0.45s ease;
 
 }
@@ -177,6 +168,10 @@ form *{
         display: flex;
         justify-content: center;
         padding-top:0px;
+    }
+
+    #submitbutton:hover{
+        transition: all 0.45s ease;
     }
 
     
