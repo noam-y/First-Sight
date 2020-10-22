@@ -19,7 +19,7 @@ def homepage():
         text_search = request.form['searchtext']
         return redirect(url_for("movie_search",movie_q=text_search))
     else:
-        return render_template('index.html')
+        return render_template('index.html', genres = get_movie_genres())
 
 
 @app.route('/suggested-list')
@@ -66,6 +66,22 @@ def category_search():
 
     else:
         return '<p>Try again.!!!</p>'
+
+def get_movie_genres():
+    query = f'https://api.themoviedb.org/3/genre/movie/list?api_key={API_KEY}&language=en-US'
+    resp = requests.get(query)
+    resp_json = resp.json()
+
+    return resp_json['genres']
+
+
+
+@app.route('/<movie_id>')
+def get_by_id(movie_id):
+    search_query = f'https://api.themoviedb.org/3/movie/{movie_id}?api_key={API_KEY}&language=en-US'
+    resp = requests.get(search_query)
+    resp_json = resp.json()
+    return sort_one_movie(resp_json,single=True)
 
 
 def sort_out_movies(search_query):
