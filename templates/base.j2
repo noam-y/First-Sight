@@ -11,7 +11,9 @@
 </head>
 <body>
     <header>
-        <a href="{{url_for('get_suggested_lists',buttonclicked='Trending')}}">Suggested movies</a>
+        <a href="{{url_for('get_suggested_lists',buttonclicked='Trending')}}" style="text-decoration: none;">
+        Suggested movies
+        </a>
     </header>
     <div class="scrollable"> 
 {% block content %}{% endblock %}

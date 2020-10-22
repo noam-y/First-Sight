@@ -32,6 +32,8 @@ form{
 
 .property{
     margin: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 input[type="text"], input[type="number"]{
