@@ -43,8 +43,11 @@ def get_suggested_lists():
 def movie_search():
     if request.method == 'POST':
         movie_q = request.form.get('searchtext')
-        search_query = f'https://api.themoviedb.org/3/search/movie?api_key={API_KEY}&language=en-US&query={movie_q}&page=1&include_adult=false'
-        return sort_out_movies(search_query)
+        if movie_q =='' or movie_q==' ':
+            return '<h1>you did not enter any query. try again!</h1>'
+        else:
+            search_query = f'https://api.themoviedb.org/3/search/movie?api_key={API_KEY}&language=en-US&query={movie_q}&page=1&include_adult=false'
+            return sort_out_movies(search_query)
 
     else:
         return redirect(url_for('homepage'))
