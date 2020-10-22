@@ -5,15 +5,19 @@
 }
 
 .poster-img{
-    width: 80%;
+    width: 95%;
     margin:auto;
+    display: block;
 }
 
 .scrollable{
-    max-width:90%;
+    width:100%;
     min-height:100%;
-    padding-top: 3em;
-    padding-bottom: 3em;
+    padding: 3em 1em 3em 1em;
+}
+
+.overview{
+    text-align: center;
 }
 
 @media screen and (min-width: 600px){
@@ -35,7 +39,7 @@
 
     .scrollable{
         padding: 1em;
-        max-width: 70%;
+        max-width: 60%;
     }
 
 
@@ -44,8 +48,9 @@
     
     .overview{
         padding-right: 3em;
-        max-width: 30em;
+        min-width: 10em;
         margin-top: 0px;
+        text-align: left;
     }
 
 
