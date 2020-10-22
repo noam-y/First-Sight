@@ -91,13 +91,13 @@ def sort_one_movie(movie, single = False):
         try:
             json_movie_details = {'title':movie["title"], 'overview':movie['overview'], 'poster':'http://image.tmdb.org/t/p/w500'+movie["poster_path"]}
         except(TypeError):
-            json_movie_details = {'title':movie["title"], 'overview':movie['overview'], 'poster':'https://www.onlygfx.com/wp-content/uploads/2017/11/grunge-question-mark-2-148x300.png'}
+            json_movie_details = {'title':movie["title"], 'overview':movie['overview'], 'poster':'https://i.ibb.co/DGzd68n/q-mark.png'}
 
     else:
         try:
             json_movie_details = {'title':movie["name"], 'overview':movie['overview'], 'poster':'http://image.tmdb.org/t/p/w500'+movie["poster_path"]}
         except(TypeError):
-            json_movie_details = {'title':movie["name"], 'overview':movie['overview'], 'poster':'https://www.onlygfx.com/wp-content/uploads/2017/11/grunge-question-mark-2-148x300.png'}
+            json_movie_details = {'title':movie["name"], 'overview':movie['overview'], 'poster':'https://i.ibb.co/DGzd68n/q-mark.png'}
 
 
     if single:
@@ -115,3 +115,5 @@ def sort_one_movie(movie, single = False):
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+

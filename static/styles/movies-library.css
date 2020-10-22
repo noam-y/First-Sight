@@ -23,6 +23,7 @@
     box-sizing:border-box;
     border-radius: 2em;
     background-color: #f0d7ce;
+    min-height: 90%;
 
 }
 

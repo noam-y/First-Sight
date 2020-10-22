@@ -1,45 +1,56 @@
 
 
-
-
-
-
 .all-movie-details{
     display: block;
+}
+
+.poster-img{
+    width: 95%;
+    margin:auto;
+    display: block;
+}
+
+.scrollable{
+    width:100%;
+    min-height:100%;
+    padding: 3em 1em 3em 1em;
+}
+
+.overview{
+    text-align: center;
 }
 
 @media screen and (min-width: 600px){
 
     .all-movie-details{
         display: flex;
+        margin-top:2em;
     }
 
-    .movie-title{
-        padding-left: 1em;
-    }
+
 
     .poster-img{
-        max-width: 20em;
+        max-width: 25em;
         float: left;
-        margin-right: 1em;
-        margin-bottom: 1em;
+
+        margin: 0em 1em 2em 0em;
+        
     }
 
     .scrollable{
         padding: 1em;
-        max-width: 70%;
+        max-width: 60%;
     }
 
 
-    .scrollable *{
-        padding:20px;
-    }
-
-    
     .overview{
-        max-width: 30em;
         padding-right: 3em;
+        min-width: 10em;
+        margin-top: 0px;
+        text-align: left;
     }
+
+
 
 
 }
