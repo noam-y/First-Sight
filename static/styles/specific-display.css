@@ -10,24 +10,27 @@
 }
 
 .scrollable{
-    width:90%
+    max-width:90%;
+    min-height:100%;
+    padding-top: 3em;
+    padding-bottom: 3em;
 }
 
 @media screen and (min-width: 600px){
 
     .all-movie-details{
         display: flex;
+        margin-top:2em;
     }
 
-    .movie-title{
-        padding-left: 1em;
-    }
+
 
     .poster-img{
-        max-width: 20em;
+        max-width: 25em;
         float: left;
-        margin-right: 1em;
-        margin-bottom: 1em;
+
+        margin: 0em 1em 2em 0em;
+        
     }
 
     .scrollable{
@@ -36,15 +39,16 @@
     }
 
 
-    .scrollable *{
-        padding:20px;
-    }
+
 
     
     .overview{
-        max-width: 30em;
         padding-right: 3em;
+        max-width: 30em;
+        margin-top: 0px;
     }
+
+
 
 
 }

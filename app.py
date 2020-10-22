@@ -28,8 +28,9 @@ def get_suggested_lists():
     search_query = suggested[buttonclicked]
 
     if buttonclicked == 'Latest':
+        search_query = 'https://api.themoviedb.org/3/search/movie?api_key=b1a92c686f2982862df95e0cdf1b9c38&language=en-US&query=A%20Blue%20Ridge%20Mountain%20Christmas&page=1&include_adult=false'
         resp = requests.get(search_query)
-        resp_json = resp.json()
+        resp_json = resp.json()['results'][0]
         return sort_one_movie(resp_json, single=True)
     else:
         return sort_out_movies(search_query)
