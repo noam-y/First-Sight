@@ -19,19 +19,13 @@
             <a link="">About</a>
         </header>
     <article class="scrollable">
-        <div><h1 style="text-align: center;">Your new favorite movies..</h1></div>
+        <div><h1 style="text-align: center;"> This is what you came for.</h1></div>
             <article class="movie-boxes">
                 {% for item in mvlist %}
                 
                     <figure class="hover-img">
-
-                    <a class="movie-link" href="{{url_for('get_by_id', movie_id= item['id'])}}">                      
-                        <img id="movie-poster" src="{{item['poster']}}" alt="{{item['title']}}">
-                    </a>
-
+                    <img id="movie-poster" src="{{item['poster']}}" alt="{{item['title']}}">
                     <figcaption> <p> {{item['title']}} </p></figcaption>
-
-                    
                     </figure>
                 
                 {%endfor%}
