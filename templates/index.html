@@ -36,9 +36,9 @@
         <article class="sidebar">
             <h3>Search your next favorite movie!</h3>
             <form action="{{url_for('category_search')}}" method="POST">
-                <div class="property">
+                <div class="property" style="display: flex;">
                     <label>genre:</label>
-                    <select name="genres" id="genres" multiple>
+                    <select name="genres" multiple>
                         {% for item in genres %}
                         <option value="{{item['id']}}">{{item['name']}}</option>
     
