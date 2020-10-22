@@ -101,15 +101,15 @@ def sort_out_movies(search_query):
 def sort_one_movie(movie, single = False):
     if 'title' in movie:
         try:
-            json_movie_details = {'title':movie["title"], 'overview':movie['overview'], 'poster':'http://image.tmdb.org/t/p/w500'+movie["poster_path"]}
+            json_movie_details = {'title':movie["title"], 'overview':movie['overview'], 'poster':'http://image.tmdb.org/t/p/w500'+movie["poster_path"] ,'id':movie["id"]}
         except(TypeError):
-            json_movie_details = {'title':movie["title"], 'overview':movie['overview'], 'poster':QUESTION_MARK}
+            json_movie_details = {'title':movie["title"], 'overview':movie['overview'], 'poster':QUESTION_MARK ,'id':movie["id"]}
 
     else:
         try:
-            json_movie_details = {'title':movie["name"], 'overview':movie['overview'], 'poster':'http://image.tmdb.org/t/p/w500'+movie["poster_path"]}
+            json_movie_details = {'title':movie["name"], 'overview':movie['overview'], 'poster':'http://image.tmdb.org/t/p/w500'+movie["poster_path"], 'id':movie["id"]}
         except(TypeError):
-            json_movie_details = {'title':movie["name"], 'overview':movie['overview'], 'poster':QUESTION_MARK}
+            json_movie_details = {'title':movie["name"], 'overview':movie['overview'], 'poster':QUESTION_MARK, 'id':movie["id"]}
 
 
     if single:
