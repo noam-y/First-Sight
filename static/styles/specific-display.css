@@ -27,10 +27,13 @@
 
     .scrollable{
         padding: 1em;
+        max-width: 70%;
     }
 
-    
 
+    .scrollable *{
+        padding:20px;
+    }
 
     
     .overview{
