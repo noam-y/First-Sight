@@ -39,10 +39,14 @@
                 <div class="property">
                     <label>genre:</label>
                     <select name="genres" id="genres" multiple>
-                        <option value="35">Comedy</option>
-                        <option value="28">Action</option>
-                        <option value="10749">Romantic</option>
-                        <option value="10751">Family friendly</option>
+
+
+                    {% for item in genres %}
+                    <option value="{{item['id']}}">{{item['name']}}</option>
+
+                    {% endfor %}
+
+
                       </select>
                 </div>
     
