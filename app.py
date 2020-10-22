@@ -6,6 +6,13 @@ app = Flask(__name__)
 
 
 
+suggested ={
+    "Latest" : f"https://api.themoviedb.org/3/movie/latest?api_key={API_KEY}&language=en-US",
+    "Upcoming" : f"https://api.themoviedb.org/3/movie/upcoming?api_key={API_KEY}&language=en-US&page=1",
+    "Trending" : f"https://api.themoviedb.org/3/trending/all/day?api_key={API_KEY}"
+
+}
+
 @app.route('/', methods =['POST','GET'])
 def homepage():
     if request.method == 'POST':
@@ -13,6 +20,24 @@ def homepage():
         return redirect(url_for("movie_search",movie_q=text_search))
     else:
         return render_template('index.html')
+
+
+@app.route('/suggested-list')
+def get_suggested_lists():
+    buttonclicked = request.args.get('buttonclicked')
+    search_query = suggested[buttonclicked]
+
+    if buttonclicked == 'Latest':
+        resp = requests.get(search_query)
+        resp_json = resp.json()
+        return sort_one_movie(resp_json, single=True)
+    else:
+        return sort_out_movies(search_query)
+
+
+    return f'<h1>{buttonclicked} </h1>'
+
+
 
 @app.route('/name-search',methods=['POST','GET'])
 def movie_search():
@@ -45,9 +70,6 @@ def category_search():
 
 
 
-if __name__ == "__main__":
-    app.run(debug=True)
-
 
 
 def sort_out_movies(search_query):
@@ -56,14 +78,40 @@ def sort_out_movies(search_query):
 
         json_movie_list=[]
         for movie in resp_json['results']:
-            try:
-                json_movie_details = {'title':movie["original_title"], 'overview':movie['overview'], 'poster':'http://image.tmdb.org/t/p/w500'+movie["poster_path"]}
-            except(TypeError):
-                json_movie_details = {'title':movie["original_title"], 'overview':movie['overview'], 'poster':'https://www.onlygfx.com/wp-content/uploads/2017/11/grunge-question-mark-2-148x300.png'}
-            json_movie_list.append(json_movie_details)
+            json_movie_list.append(sort_one_movie(movie))
 
         return render_template( 
             'recommended-movies.html',
             mvlist = json_movie_list,
         )
 
+
+def sort_one_movie(movie, single = False):
+    if 'title' in movie:
+        try:
+            json_movie_details = {'title':movie["title"], 'overview':movie['overview'], 'poster':'http://image.tmdb.org/t/p/w500'+movie["poster_path"]}
+        except(TypeError):
+            json_movie_details = {'title':movie["title"], 'overview':movie['overview'], 'poster':'https://www.onlygfx.com/wp-content/uploads/2017/11/grunge-question-mark-2-148x300.png'}
+
+    else:
+        try:
+            json_movie_details = {'title':movie["name"], 'overview':movie['overview'], 'poster':'http://image.tmdb.org/t/p/w500'+movie["poster_path"]}
+        except(TypeError):
+            json_movie_details = {'title':movie["name"], 'overview':movie['overview'], 'poster':'https://www.onlygfx.com/wp-content/uploads/2017/11/grunge-question-mark-2-148x300.png'}
+
+
+    if single:
+        return render_template(
+            'onemovie.html',
+            mv =json_movie_details,
+        )
+    else:
+        return json_movie_details
+            
+
+
+
+
+
+if __name__ == "__main__":
+    app.run(debug=True)

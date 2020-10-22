@@ -19,9 +19,6 @@ body{
     flex-flow:column wrap;
 }
 
-.property{
-    margin: 10px 00x
-}
 
 .scrollable{
     display: block;
@@ -61,11 +58,11 @@ h3{
     color: #fffdf9;
     font-weight: bold;
     padding:10px;
-    margin: 20px;
     align-self: flex-end;
     font-family: 'Piazzolla', serif;
     font-size: 1.5em;
     display: block;
+    margin:auto;
     
 
 }
@@ -115,6 +112,11 @@ select[name="genres"]{
     background-color: #abbcf1;
     transition: all 0.45s ease;
 
+}
+
+form *{
+    align-self: center;
+    margin: 1em auto 1em auto;
 }
 
 
@@ -169,10 +171,7 @@ select[name="genres"]{
     }
 
     
-    .property{
-        margin: 10px 00x;
-        display:inline-block;
-    }
+
     
     .scrollable{
         display: flex;

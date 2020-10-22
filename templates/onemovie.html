@@ -1,0 +1,27 @@
+{% extends "base-page.j2" %}
+
+
+{%block heads%}
+<style>
+
+
+    </style>
+
+    <link rel="stylesheet" href="../static/styles/specific-display.css">
+    
+
+{%endblock%}
+
+
+
+{% block content %}
+<h1 class="movie-title"> {{mv['title']}}</h1>
+<div class="all-movie-details">
+   
+
+    <img class="poster-img" src= "{{mv['poster']}}" alt="poster title">
+    <p class= "overview">  {{mv['overview']}}
+    </p>
+</div>
+
+{% endblock %}

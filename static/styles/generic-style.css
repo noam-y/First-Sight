@@ -31,6 +31,10 @@ h1{
     
 }
 
+.scrollable{
+    background-color: #fff3ee;
+}
+
 @media screen and (min-width: 600px){
     body{
         display: flex;
@@ -59,6 +63,11 @@ h1{
     h1{
         font-size: 4em;
         margin-bottom: 0em;
+    }
+
+    .scrollable{
+        max-width: 80%;
+        min-width: 50%;
     }
 
 }
