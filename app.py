@@ -92,7 +92,7 @@ def sort_out_movies(search_query):
             json_movie_list.append(sort_one_movie(movie))
 
         return render_template( 
-            'recommended-movies.html',
+            'recommended-movies.j2',
             mvlist=json_movie_list,
         )
 
