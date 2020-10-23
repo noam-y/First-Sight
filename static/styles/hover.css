@@ -45,7 +45,7 @@
     left: 0;
     right: 0;
     align-items: center;
-    z-index: 1;
+    z-index: 2;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -54,6 +54,7 @@
     transition-delay: 0.1s;
     letter-spacing:0.2em;
     font-size:1.5em;
+    color:rgb(34, 22, 29);
   }
   
   .hover-img:hover:before,

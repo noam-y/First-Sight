@@ -19,7 +19,7 @@ def homepage():
         text_search = request.form['searchtext']
         return redirect(url_for("movie_search", movie_q=text_search))
     else:
-        return render_template('index.j2', genres=get_movie_genres())
+        return render_template('index.html', genres=get_movie_genres())
 
 
 @app.route('/suggested-list')
@@ -92,7 +92,7 @@ def sort_out_movies(search_query):
             json_movie_list.append(sort_one_movie(movie))
 
         return render_template( 
-            'recommended-movies.j2',
+            'recommended-movies.html',
             mvlist=json_movie_list,
         )
 
@@ -113,7 +113,7 @@ def sort_one_movie(movie, single=False):
 
     if single:
         return render_template(
-            'onemovie.j2',
+            'onemovie.html',
             mv=json_movie_details,
         )
     else:

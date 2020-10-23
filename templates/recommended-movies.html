@@ -18,11 +18,11 @@
                 
                 <figure class="hover-img">
 
-                    <a class="movie-link" href="{{url_for('get_by_id', movie_id= item['id'])}}">                      
-                        <img id="movie-poster" src="{{item['poster']}}" alt="{{item['title']}}">
-                    </a>
+                   <img id="movie-poster"  src="{{item['poster']}}" alt="{{item['title']}}" border="0" />
+                    <!--<a class="movie-link" href="{{url_for('get_by_id', movie_id= item['id'])}}"></a>                      
+                    </a>-->
 
-                    <figcaption> <p> {{item['title']}} </p></figcaption>
+                    <a href="{{url_for('get_by_id', movie_id= item['id'])}}"><figcaption> <p> {{item['title']}} </p></figcaption></a>
 
 
                     </figure>
